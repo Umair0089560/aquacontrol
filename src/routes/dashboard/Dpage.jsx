@@ -47,7 +47,7 @@ export default function Dashboard() {
 
 
         {/* Status */}
-          <h3 className="font-semibold mt-[15px]">Status</h3>
+          <h3 className="font-semibold mt-[16px]">Status</h3>
 
         <div className="bg-[#0B1830] rounded p-5 mt-5" style={{width: "344.14px", height: "148.85px"}}>
           <div className="grid grid-cols-2 gap-y-3 gap-x-5 text-[11px]">
