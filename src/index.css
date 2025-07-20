@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply [scrollbar-color:_#cbd5e1_transparent] dark:[scrollbar-color:_#334155_transparent];
+    }
+}
+
+
+.recharts-default-tooltip {
+    @apply !rounded-lg !border !border-slate-300 !bg-white transition-colors dark:!border-slate-700 dark:!bg-slate-900;
+}
+
+.recharts-tooltip-label {
+    @apply text-base font-medium text-slate-900 dark:text-slate-50;
+}
+
+.recharts-tooltip-item {
+    @apply text-base font-medium !text-blue-500 dark:!text-blue-600;
+}
