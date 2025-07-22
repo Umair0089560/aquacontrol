@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import { NavLink } from "react-router-dom";
 import { navbarLinks } from "@/constants";
 
-import logoIcon from "@/assets/AQIKON.png"; // circular icon like in image
+import logoIcon from "@/assets/AQIKON.png"; 
 import { cn } from "@/utils/cn";
 import PropTypes from "prop-types";
 
@@ -15,7 +15,7 @@ export const Sidebar = forwardRef(({ collapsed }, ref) => {
                 collapsed ? "w-[70px]" : "w-[240px]"
             )}
         >
-            {/* Logo */}
+          
             <div className="flex items-center justify-center py-6 mb-5">
                 <img
                     src={logoIcon}
@@ -24,7 +24,7 @@ export const Sidebar = forwardRef(({ collapsed }, ref) => {
                 />
             </div>
 
-            {/* Navigation Links */}
+       
             <div className="flex w-full flex-col gap-4">
                 {navbarLinks.map((navbarLink) => (
                     <nav key={navbarLink.title} className="w-full">
