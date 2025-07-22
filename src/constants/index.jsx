@@ -1,4 +1,4 @@
-import {ChartColumn, LayoutDashboard , NotepadText } from "lucide-react";
+import {ChartColumn, LayoutDashboard , NotepadText, SquareActivity  } from "lucide-react";
 
 
 
@@ -10,7 +10,7 @@ export const navbarLinks = [
             { label: "Dashboard", path: "/", icon: LayoutDashboard  },
             { label: "Sensor", path: "/sensor", icon:  ChartColumn},
             { label: "Report", path: "/report", icon: NotepadText  },
-            { label: "Monitor", path: "/monitor", icon: ChartColumn },
+            { label: "Monitor", path: "/monitor", icon: SquareActivity  },
         ],
     },
 ];
