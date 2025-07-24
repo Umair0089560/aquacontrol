@@ -12,7 +12,7 @@ const sensors = [
 
 export default function SensorPanel() {
   return (
-    <div className="bg-[#0B1830] rounded-xl p-5 w-full max-w-sm text-white">
+    <div className="bg-[#0B1830] rounded-xl p-5 w-full text-white">
       <h3 className="font-semibold text-sm mb-4">Sensors</h3>
 
     

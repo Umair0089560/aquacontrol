@@ -62,7 +62,7 @@ export const Header = ({ collapsed, setCollapsed }) => {
           </span>
         </div>
 
-      
+       
         <div className="relative">
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
