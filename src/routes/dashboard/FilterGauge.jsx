@@ -59,29 +59,36 @@ useEffect(() => {
 
 const FilterGauge = ({ title, value }) => {
   return (
-    <div className="bg-[#0B1830] p-4 rounded flex flex-col items-center">
-      <div className="text-white font-semibold text-lg mb-2">{title}</div>
+  <div className="bg-[#0B1830] p-4 sm:p-2 rounded flex flex-col items-center">
+  <div className="text-white font-semibold text-lg sm:text-base mb-2 sm:mb-1 text-center">
+    {title}
+  </div>
 
-      <div className="w-full flex justify-center items-center">
-        <GaugeCanvas value={value} />
-      </div>
+  <div className="w-full flex  justify-center items-center">
+    <GaugeCanvas value={value} />
+  </div>
 
-      <div className="text-white text-2xl mt-2">{value}</div>
+  <div className="text-white text-2xl sm:text-xl mt-2 sm:mt-1">
+    {value}
+  </div>
 
-      <div className="mt-2 text-center">
-        <div className="text-[#9DA3AC] text-[11px]">FILTER INSPECTION 5,0</div>
-        <div className="text-[#9DA3AC] text-[11px]">
-          PROBABLE FILTER CHANGE &gt; 1.0
-        </div>
-      </div>
+  <div className="mt-2 sm:mt-1 text-center">
+    <div className="text-[#9DA3AC] text-[11px] sm:text-[10px] leading-tight">
+      FILTER INSPECTION 5,0
     </div>
+    <div className="text-[#9DA3AC] text-[11px] sm:text-[10px] leading-tight">
+      PROBABLE FILTER CHANGE &gt; 1.0
+    </div>
+  </div>
+</div>
+
   );
 };
 
 export default function FilterOverview() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-      <div className="col-span-1 md:col-span-2 text-xl font-semibold text-white px-4 py-2 rounded">
+      <div className="col-span-1 md:col-span-2 text-[18px] font-[400] text-white px-4 py-2 rounded">
         Filter Overview
       </div>
 
