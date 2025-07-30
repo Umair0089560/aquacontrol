@@ -3,6 +3,7 @@ import FlowTab from './FlowTab';
 import Pressure from './Pressure';
 import Quality from './Quality';
 import TankLevel from './TankLevel';
+import Machine from './Machine';
 const tabs = [
   {
     label: "Flow",
@@ -32,10 +33,7 @@ const tabs = [
     label: "Machine",
     content: (
       <div>
-        <h2 className="text-xl font-semibold mb-2">Machine Status</h2>
-        <p className="text-sm opacity-80">Status: <span className="text-green-400 font-medium">Running</span></p>
-        <p className="text-sm opacity-80">Last maintenance: 15 days ago</p>
-        <p className="text-sm opacity-80">Runtime today: 4h 22m</p>
+       <Machine/>
       </div>
     ),
   },

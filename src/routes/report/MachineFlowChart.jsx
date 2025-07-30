@@ -10,44 +10,26 @@ import {
 } from "recharts";
 
 const allData = {
-    Month: {
-        in: [],
-        out: [],
-        reject: [],
-    },
-    Week: {
-        in: [],
-        out: [],
-        reject: [],
-    },
-    Year: {
-        in: [],
-        out: [],
-        reject: [],
-    },
+    Month: [],
+    Week: [],
+    Year: [],
 };
 
 const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 months.forEach((month) => {
     for (let i = 0; i < 4; i++) {
-        allData.Month.in.push({ label: i === 3 ? month : "", total: Math.floor(Math.random() * 800) + 400 });
-        allData.Month.out.push({ label: i === 3 ? month : "", total: Math.floor(Math.random() * 500) + 100 });
-        allData.Month.reject.push({ label: i === 3 ? month : "", total: Math.floor(Math.random() * 200) + 50 });
+        allData.Month.push({ label: i === 3 ? month : "", total: Math.floor(Math.random() * 800) + 400 });
     }
 });
 
 const weeks = ["Week 1", "Week 2", "Week 3", "Week 4"];
 weeks.forEach((week) => {
-    allData.Week.in.push({ label: week, total: Math.floor(Math.random() * 400) + 200 });
-    allData.Week.out.push({ label: week, total: Math.floor(Math.random() * 200) + 100 });
-    allData.Week.reject.push({ label: week, total: Math.floor(Math.random() * 100) + 50 });
+    allData.Week.push({ label: week, total: Math.floor(Math.random() * 400) + 200 });
 });
 
 const years = ["2018","2019","2020","2021", "2022", "2023","2024"];
 years.forEach((year) => {
-    allData.Year.in.push({ label: year, total: Math.floor(Math.random() * 4000) + 3000 });
-    allData.Year.out.push({ label: year, total: Math.floor(Math.random() * 2500) + 1500 });
-    allData.Year.reject.push({ label: year, total: Math.floor(Math.random() * 1000) + 500 });
+    allData.Year.push({ label: year, total: Math.floor(Math.random() * 4000) + 3000 });
 });
 
 const CustomTooltip = ({ active, payload }) => {
@@ -61,13 +43,12 @@ const CustomTooltip = ({ active, payload }) => {
     return null;
 };
 
-const WaterFlowChart = () => {
+const MachineFlowChart = () => {
     const [view, setView] = useState("Month");
-    const [activeTab, setActiveTab] = useState("in");
     const [rangeIndex, setRangeIndex] = useState(0);
     const itemsPerPage = view === "Month" ? 24 : 6;
 
-    const data = allData[view][activeTab];
+    const data = allData[view];
     const maxRange = Math.ceil(data.length / itemsPerPage);
     const visibleData = data.slice(
         rangeIndex * itemsPerPage,
@@ -78,16 +59,13 @@ const WaterFlowChart = () => {
         <div className="bg-[#0B1830] text-white p-6 rounded max-w-7xl mx-auto">
 
             <div className="flex justify-between items-center mb-6">
-                <h2 className="text-[18px] font-[400]">Water flow</h2>
+                <h2 className="text-[18px] font-[400]">Operating hours</h2>
                 <select
                     value={view}
                     onChange={(e) => {
                         setView(e.target.value);
                         setRangeIndex(0);
                     }}
-
-
-                
                     className="bg-transparent border border-gray-600 text-[11px] rounded-md px-3 py-1 text-white"
                 >
                     {Object.keys(allData).map((key) => (
@@ -98,30 +76,6 @@ const WaterFlowChart = () => {
                 </select>
             </div>
 
-
-            <div className="flex gap-6 text-[11px] font-[500] mb-4">
-                {[
-                    { key: "in", label: "Water flow in" },
-                    { key: "out", label: "Water flow out" },
-                    { key: "reject", label: "Reject water" },
-                ].map((tab) => (
-                    <button
-                        key={tab.key}
-                        onClick={() => {
-                            setActiveTab(tab.key);
-                            setRangeIndex(0);
-                        }}
-                        className={`pb-1 ${activeTab === tab.key
-                                ? "text-[#00D1FF] border-b-2 border-[#00D1FF]"
-                                : "text-gray-400"
-                            }`}
-                    >
-                        {tab.label}
-                    </button>
-                ))}
-            </div>
-
-
             <div className="relative">
                 <ResponsiveContainer width="100%" height={320}>
                     <BarChart
@@ -129,7 +83,6 @@ const WaterFlowChart = () => {
                         barSize={18}
                         barGap={2}
                         margin={{ top: 0, right: 0, left: 0, bottom: 10 }}
-
                     >
                         <defs>
                             <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
@@ -165,7 +118,6 @@ const WaterFlowChart = () => {
                     </BarChart>
                 </ResponsiveContainer>
 
-
                 {data.length > itemsPerPage && (
                     <div className="flex justify-center items-center mt-4 gap-6 text-white text-[14px]">
                         <button
@@ -190,4 +142,4 @@ const WaterFlowChart = () => {
     );
 };
 
-export default WaterFlowChart;
+export default MachineFlowChart;
