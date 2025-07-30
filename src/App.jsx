@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "@/routes/layout";
 import DashboardPage from "@/routes/dashboard/Dpage";
 import DashboardSensor from "@/routes/sensor/Dsensor";
+import DashboardReport from "@/routes/report/Report";
 
 function App() {
     const router = createBrowserRouter([
@@ -21,6 +22,11 @@ function App() {
                     index: true,
                     element: <DashboardSensor />,
                     path: "/sensor"
+                },
+                {
+                    index: true,
+                    element: <DashboardReport />,
+                    path: "/report"
                 },
                 {
                     path: "settings",

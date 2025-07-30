@@ -17,6 +17,7 @@ export const Header = ({ collapsed, setCollapsed }) => {
   const pageTitles = {
     "/": "Dashboard",
     "/sensor": "Sensor",
+    "/report": "Report",
     "/settings": "Settings",
   };
 
