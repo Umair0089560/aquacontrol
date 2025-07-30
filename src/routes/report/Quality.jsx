@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 
 const sampleData = [
-  { Month: "00-01", Flowin: "20", Flowout: "0.00", Flowreturn: "0.00" },
+  { Month: "00-01", Flowin: "20", Flowout: "0.00", Flowreturn: "0.00"  },
   { Month: "01-02", Flowin: "20", Flowout: "13.73", Flowreturn: "6.77" },
   { Month: "02-03", Flowin: "20", Flowout: "13.93", Flowreturn: "9.47" },
   { Month: "03-04", Flowin: "40", Flowout: "13.73", Flowreturn: "2.50" },
   { Month: "04-05", Flowin: "60", Flowout: "13.78", Flowreturn: "0.00" },
   { Month: "05-06", Flowin: "200", Flowout: "13.87", Flowreturn: "0.00" },
 ];
-import FilterOverviewReport from "./FilterOverviewReport";
-function Pressure() {
+function  Quality() {
   const [selectedInterval, setSelectedInterval] = useState("Day");
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 25;
   return (
   <>
       <div>
-      <FilterOverviewReport />
+<h3 className="font-semibold mt-[16px]">Value incoming/outgoing water</h3>
          <div>
       <div className="bg-[#0B1830] rounded md:w-[779px] mt-5 shadow p-4">
 
@@ -66,11 +65,10 @@ function Pressure() {
             <thead>
               <tr>
                 <th className="p-4 text-center font-[400] text-[11px] text-[#B5B9C0] w-[160px]"></th>
-                <th className="p-4 text-center font-[400] text-[11px] text-[#B5B9C0] w-[160px]">Pressure in</th>
-                <th className="p-4 text-center font-[400] text-[11px] text-[#B5B9C0] w-[160px]">Coarse filter</th>
-                <th className="p-4 text-center font-[400] text-[11px] text-[#B5B9C0] w-[160px]">After fine filter</th>
-                <th className="p-4 text-center font-[400] text-[11px] text-[#B5B9C0] w-[160px]">Coarse filter change</th>
-                <th className="p-4 text-center font-[400] text-[11px] text-[#B5B9C0] w-[160px]">Filter change</th>
+                <th className="p-4 text-center font-[400] text-[11px] text-[#B5B9C0] w-[160px]">Conductivity</th>
+                <th className="p-4 text-center font-[400] text-[11px] text-[#B5B9C0] w-[160px]">Temperature</th>
+                <th className="p-4 text-center font-[400] text-[11px] text-[#B5B9C0] w-[160px]">Conductivity</th>
+                <th className="p-4 text-center font-[400] text-[11px] text-[#B5B9C0] w-[160px]">Temperature</th>
               </tr>
             </thead>
             <tbody>
@@ -82,7 +80,6 @@ function Pressure() {
                   <td className="p-3 text-center font-[400] text-[11px] text-[#B5B9C0] w-[160px] bg-[#17243B]">{row.Flowout}</td>
                   <td className="p-3 text-center font-[400] text-[11px] text-[#B5B9C0] w-[160px] bg-[#232F44]">{row.Flowreturn}</td>
                   <td className="p-3 text-center font-[400] text-[11px] text-[#B5B9C0] w-[160px] bg-[#17243B]">{row.Flowreturn}</td>
-                  <td className="p-3 text-center font-[400] text-[11px] text-[#B5B9C0] w-[160px] bg-[#232F44]">{row.Flowreturn}</td>
                 </tr>
               ))}
             </tbody>
@@ -104,4 +101,4 @@ function Pressure() {
   )
 }
 
-export default Pressure
+export default  Quality

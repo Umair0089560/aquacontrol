@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import FlowTab from './FlowTab';
 import Pressure from './Pressure';
+import Quality from './Quality';
+import TankLevel from './TankLevel';
 const tabs = [
   {
     label: "Flow",
@@ -22,10 +24,7 @@ const tabs = [
     label: "Quality",
     content: (
       <div>
-        <h2 className="text-xl font-semibold mb-2">Water Quality</h2>
-        <p className="text-sm opacity-80">TDS Level: 450 ppm</p>
-        <p className="text-sm opacity-80">pH Level: 7.2 (Stable)</p>
-        <p className="text-sm opacity-80">Chlorine: 0.3 mg/L</p>
+        <Quality/>
       </div>
     ),
   },
@@ -44,10 +43,7 @@ const tabs = [
     label: "Tank level",
     content: (
       <div>
-        <h2 className="text-xl font-semibold mb-2">Machine Status</h2>
-        <p className="text-sm opacity-80">Status: <span className="text-green-400 font-medium">Running</span></p>
-        <p className="text-sm opacity-80">Last maintenance: 15 days ago</p>
-        <p className="text-sm opacity-80">Runtime today: 4h 22m</p>
+      <TankLevel/>
       </div>
     ),
   },
