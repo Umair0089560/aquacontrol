@@ -18,6 +18,7 @@ export const Header = ({ collapsed, setCollapsed }) => {
     "/": "Dashboard",
     "/sensor": "Sensor",
     "/report": "Report",
+    "/moniter": "Moniter",
     "/settings": "Settings",
   };
 

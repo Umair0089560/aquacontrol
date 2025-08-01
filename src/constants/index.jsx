@@ -10,7 +10,7 @@ export const navbarLinks = [
             { label: "Dashboard", path: "/", icon: LayoutDashboard  },
             { label: "Sensor", path: "/sensor", icon:  ChartColumn},
             { label: "Report", path: "/report", icon: NotepadText  },
-            { label: "Monitor", path: "/monitor", icon: SquareActivity  },
+            { label: "Moniter", path: "/moniter", icon: SquareActivity  },
         ],
     },
 ];

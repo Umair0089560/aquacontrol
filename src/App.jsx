@@ -6,6 +6,7 @@ import Layout from "@/routes/layout";
 import DashboardPage from "@/routes/dashboard/Dpage";
 import DashboardSensor from "@/routes/sensor/Dsensor";
 import DashboardReport from "@/routes/report/Report";
+import DashboardMoniter from "./routes/moniter/Moniter";
 
 function App() {
     const router = createBrowserRouter([
@@ -27,6 +28,11 @@ function App() {
                     index: true,
                     element: <DashboardReport />,
                     path: "/report"
+                },
+                {
+                    index: true,
+                    element: <DashboardMoniter />,
+                    path: "/moniter"
                 },
                 {
                     path: "settings",
